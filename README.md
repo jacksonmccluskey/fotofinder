@@ -34,3 +34,9 @@ To Visit App:
 - [x] When tapping on an image, it should display in a responsive overlay
 - [x] Implement your own spelling checker that automatically corrects some user input mistakes
   - [x] You can also use a Unix words dictionary file to assist in determining the validity of words
+  - [x] Run your spell checker on the input word before submitting the image search requests
+  - [x] Remove non-letter characters. 'nyl;on' should auto-correct to ‘nylon'
+  - [x] Mistyped vowels. 'ceku' should auto-correct to ‘cake'
+- [x] Make sure to take into account some error handling, and keep your code clean and organized
+- [x] Create a README that documents the assumptions and decisions that you have made in designing the architecture of your site
+- [x] Please host the site on Heroku or another platform of your choice ![Link](fotofinderapp.web.app)
