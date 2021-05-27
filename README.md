@@ -39,4 +39,4 @@ To Visit App:
   - [x] Mistyped vowels. 'ceku' should auto-correct to ‘cake'
 - [x] Make sure to take into account some error handling, and keep your code clean and organized
 - [x] Create a README that documents the assumptions and decisions that you have made in designing the architecture of your site
-- [x] Please host the site on Heroku or another platform of your choice ![Link](fotofinderapp.web.app)
+- [x] Please host the site on Heroku or another platform of your choice [Link](fotofinderapp.web.app)
