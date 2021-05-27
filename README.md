@@ -40,3 +40,14 @@ To Visit App:
 - [x] Make sure to take into account some error handling, and keep your code clean and organized
 - [x] Create a README that documents the assumptions and decisions that you have made in designing the architecture of your site
 - [x] Please host the site on Heroku or another platform of your choice [Link](fotofinderapp.web.app)
+
+## Tech Stack
+
+#### Tools & Resources Used:
+
+- React / React Hooks (For Frontend Components)
+- React Router (For Navigation)
+- Context API (For Data Globalization)
+- Flickr API (For Image Search)
+- axios (For Fetching Data)
+- Unix words (For Spell Checking)
