@@ -51,3 +51,46 @@ To Visit App:
 - Flickr API (For Image Search)
 - axios (For Fetching Data)
 - Unix words (For Spell Checking)
+
+## Spell Checker Logic
+
+#### Retrieving the Unix Dictionary
+
+`import json
+
+
+with open('/usr/share/dict/words') as infile:
+    words = infile.read().splitlines()
+    with open('words.json', 'w') as outfile:
+        json.dump(words, outfile)`
+        
+#### Removing Non-Letter Characters
+
+`term.replace(/[^A-Za-z]g, '')`
+
+#### Replacing Mispelled Vowels
+
+`const regex = /[aeiou]/g
+const spellCheck = (wordList, searchTerm) => {
+  let wordSet = new Set(wordList)
+  let lowerCase = new Map()
+  let noVowels = new Map()
+  const firstLetter = searchTerm[0]
+  for (let i = wordList.length - 1; i >= 0; i--) {
+    if (searchTerm === wordList[i]) {
+      return searchTerm
+    }
+    const firstLetterOfWord = wordList[i][0]
+    if (firstLetterOfWord === firstLetter) {
+      let word = wordList[i], 
+      let lowerCaseWord = word.toLowerCase()
+      lowerCase.set(lowerCaseWord, word)
+      noVowels.set(lowerCaseWord.replace(regex, "#"), word)
+    }
+  }
+  let correctedWord = searchTerm
+  let lowerCaseSearchTerm = searchTerm.toLowerCase()
+  let noVowelsSearchTerm = lowerCaseSearchTerm.replace(regex, "*")
+  if (!wordSet.has(searchTerm)) correctedWord = lowerCase.get(lowerCaseSearchTerm) || noVowels.get(noVowelsSearchTerm) || ""
+  return correctedWord
+}`
