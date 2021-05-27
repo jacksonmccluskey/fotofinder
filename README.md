@@ -27,10 +27,10 @@ To Visit App:
 
 #### Requirements:
 
-[x] Create a simple responsive website to display images from a search term using an image search API of your choice
-[x] Should include one text entry field
-[x] Should include a button to request results
-[x] Should include a results area to display the images in a gallery style of your choice
-[x] When tapping on an image, it should display in a responsive overlay
-[x] Implement your own spelling checker that automatically corrects some user input mistakes
-  [x] You can also use a Unix words dictionary file to assist in determining the validity of words
+- [x] Create a simple responsive website to display images from a search term using an image search API of your choice
+- [x] Should include one text entry field
+- [x] Should include a button to request results
+- [x] Should include a results area to display the images in a gallery style of your choice
+- [x] When tapping on an image, it should display in a responsive overlay
+- [x] Implement your own spelling checker that automatically corrects some user input mistakes
+  - [x] You can also use a Unix words dictionary file to assist in determining the validity of words
