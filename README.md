@@ -90,7 +90,7 @@ const spellCheck = (wordList, searchTerm) => {
   }
   let correctedWord = searchTerm
   let lowerCaseSearchTerm = searchTerm.toLowerCase()
-  let noVowelsSearchTerm = lowerCaseSearchTerm.replace(regex, "*")
+  let noVowelsSearchTerm = lowerCaseSearchTerm.replace(regex, "#")
   if (!wordSet.has(searchTerm)) correctedWord = lowerCase.get(lowerCaseSearchTerm) || noVowels.get(noVowelsSearchTerm) || ""
   return correctedWord
 }`
