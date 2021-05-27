@@ -6,6 +6,7 @@ import Loader from "./Loader"
 const Container = ({ searchTerm }) => {
   const { images, loading, runSearch } = useContext(PhotoContext);
   useEffect(() => {
+    console.log("useEffect: runSearch(searchTerm)")
     // run search on searchTerm
     runSearch(searchTerm)
     // eslint-disable-next-line

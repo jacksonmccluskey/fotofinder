@@ -1,7 +1,42 @@
 body {
   text-align: center;
-  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   color: #3f4850;
+  background-color: #a1c3d1;
+ }
+
+.flexible-modal {
+  position: absolute;
+  z-index: 1;
+  border: 1px solid #ccc;
+  background: white;
+}
+.flexible-modal-mask {
+  position: fixed;
+  height: 100%;
+  background: rgba(55, 55, 55, 0.6);
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+.flexible-modal-resizer {
+  position:absolute;
+  right:0;
+  bottom:0;
+  cursor:se-resize;
+  margin:5px;
+  border-bottom: solid 2px #333;
+  border-right: solid 2px #333;
+}
+.flexible-modal-drag-area{
+  background: rgba(22, 22, 333, 0.2);
+  height: 50px;
+  position:absolute;
+  right:0;
+  top:0;
+  cursor:move;
 }
 
 .forkongithub a {
@@ -40,16 +75,19 @@ body {
   top: auto;
 }
 
-h2 {
-  font-size: 2em;
-  margin: 52px 0 40px;
-  text-transform: capitalize;
+h1 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-size: 4em;
+  font-weight: 700;
   color: #051c33;
 }
 
-h1 {
-  font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
-  font-size: 4em;
+h2 {
+  font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  margin: 52px 0 40px;
+  text-transform: capitalize;
   color: #051c33;
 }
 
