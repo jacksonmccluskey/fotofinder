@@ -5,12 +5,14 @@ import Header from "./components/Header"
 import Item from "./components/Item"
 import Search from "./components/Search"
 import NotFound from "./components/NotFound"
+import { runSpellChecker } from "./spelling/Words"
 
 const App = () => {
-  const handleSubmit = (e, history, searchInput) => {
+  const handleSubmit = async (e, history, searchInput) => {
     e.preventDefault()
     e.currentTarget.reset()
-    let url = `/search/${searchInput}`
+    const correctTerm = await runSpellChecker(searchInput)
+    let url = `/search/${correctTerm}`
     history.push(url)
   }
 

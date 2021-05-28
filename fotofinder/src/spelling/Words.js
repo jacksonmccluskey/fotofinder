@@ -12,7 +12,7 @@ const getData = async () => {
         const {data} = await axios.get(ROOT_URL);
         console.log("getData: try")
         console.log(data)
-        return await data;
+        return data;
     } catch (err) {
         console.log(err.message);
     }
@@ -87,9 +87,6 @@ const runSpellChecker = async (searchTerm) => {
     return await spellChecker(searchTerm)
 }
 
-const correctedTerm = runSpellChecker("citias7")
-
-console.log("final: correctedTerm")
-console.log(correctedTerm)
+runSpellChecker("citias7").then((correctedTerm) => {console.log(correctedTerm)})
 
 module.exports = { runSpellChecker }
