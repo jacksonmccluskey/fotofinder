@@ -3,9 +3,8 @@ import React, { useState } from "react"
 const Form = ({ handleSubmit, history }) => {
   const [searchEntry, setSearchEntry] = useState("")
   const updateSearchInput = e => {
-    console.log("updateSearchInput: setSearchEntry")
     setSearchEntry(e.target.value) // update search term state
-  };
+  }
 
   return (
     <form

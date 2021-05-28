@@ -17,7 +17,7 @@ function fetchWords(searchTerm) {
 }
 
 function checkWords(wordData, searchTerm) {
-    let finalWord = ""
+    let finalWord = "Not Found"
 
     for (let i = 0; i < wordData.length; i++) {
         if (wordData[i] === searchTerm) {
@@ -27,7 +27,7 @@ function checkWords(wordData, searchTerm) {
         }
     }
 
-    if (finalWord !== "") return finalWord
+    if (finalWord !== "Not Found") return finalWord
 
     for (let i = 0; i < wordData.length; i++) {
         if (checkSpelling(wordData[i], searchTerm)) {
@@ -36,6 +36,8 @@ function checkWords(wordData, searchTerm) {
             break
         }
     }
+
+    console.log(typeof(finalWord))
 
     return finalWord
 }
@@ -52,4 +54,6 @@ function checkSpelling(word, searchTerm) {
     return isSame
 }
 
-fetchWords("sholl")
+fetchWords("test")
+
+module.exports = { fetchWords }
