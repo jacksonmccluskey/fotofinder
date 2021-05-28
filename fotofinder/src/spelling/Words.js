@@ -1,53 +1,95 @@
 const axios = require('axios')
 
-const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'
+const ROOT_URL = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'
 
 const regexVowels = /[aeiou]/g
 const regexAlpha = /[^A-Za-z]/g
 
-function fetchWords(searchTerm) {
-    let correctedSearchTerm = searchTerm.replace(regexAlpha, '')
+// retrieve UNIX words data
 
-    axios
-    .get(url)
-    .then(({ data }) =>
-        checkWords(data, correctedSearchTerm)
-    )
-    .catch((err) => console.error("Fetch Words Error", err))
+const getData = async () => {
+    try {
+        const {data} = await axios.get(ROOT_URL);
+        console.log("getData: try")
+        console.log(data)
+        return await data;
+    } catch (err) {
+        console.log(err.message);
+    }
 }
 
-function checkWords(wordData, searchTerm) {
-    let finalWord = "Not Found"
+// compare each word with term
 
-    for (let i = 0; i < wordData.length; i++) {
-        if (wordData[i] === searchTerm) {
-            finalWord = wordData[i]
+const checkWords = (wordData, searchTerm) => {
+    let finalWord = "Not Found" // corrected word
+
+    console.log("checkWords: wordData")
+    console.log(wordData)
+
+    for (let i = 0; i < wordData.length; i++) { // first loop: check if searchTerm is in dictionary
+        if (wordData[i] === searchTerm) { // searchTerm is equal to word in dictionary
+            finalWord = wordData[i] // assign finalWord to current word in dictionary
             break
         }
     }
 
-    if (finalWord !== "Not Found") return finalWord
+    console.log("checkWords: finalWord")
+    console.log(finalWord)
+    console.log(typeof(finalWord))
 
-    for (let i = 0; i < wordData.length; i++) {
-        if (checkSpelling(wordData[i], searchTerm)) {
-            finalWord = wordData[i]
+    if (finalWord !== "Not Found") return finalWord // word is spelled correctly
+
+    for (let i = 0; i < wordData.length; i++) { // second loop: check if word matches searchTerm (non-vowels)
+        if (matchConsonants(wordData[i], searchTerm)) { // searchTerm is equal to word in dictionary (non-vowels)
+            finalWord = wordData[i] // assign finalWord to current word in dictionary
             break
         }
     }
+
+    console.log("checkWords: finalWord")
+    console.log(finalWord)
+    console.log(typeof(finalWord))
 
     return finalWord
 }
 
-function checkSpelling(word, searchTerm) {
-    let lowerCaseWord = word.toLowerCase()
-    let lowerCaseSearchTerm = searchTerm.toLowerCase()
+// mask both terms to compare non-vowel letters
 
-    let hashtagWord = lowerCaseWord.replace(regexVowels, '#')
-    let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')
+const matchConsonants = (word, searchTerm) => {
+    const lowerCaseWord = word.toLowerCase() // transform both words to lowercase
+    const lowerCaseSearchTerm = searchTerm.toLowerCase() // ''
 
-    return hashtagWord === hashtagSearchTerm
+    const hashtagWord = lowerCaseWord.replace(regexVowels, '#') // replace all vowels with '#'
+    const hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#') // ''
+
+    return hashtagWord === hashtagSearchTerm // compare non-vowel letters
 }
 
-console.log(fetchWords("cit999"))
+// spell checker, remove non-alpha, compare with all words
 
-module.exports = { fetchWords }
+const spellChecker = async (searchTerm) => {
+    const correctedSearchTerm = searchTerm.replace(regexAlpha, '')
+
+    const data = await getData()
+
+    console.log("spellChecker: getData()")
+    console.log(data)
+
+    const word = checkWords(data, correctedSearchTerm)
+
+    console.log("spellChecker: word")
+    console.log(word)
+
+    return word
+}
+
+const runSpellChecker = async (searchTerm) => {
+    return await spellChecker(searchTerm)
+}
+
+const correctedTerm = runSpellChecker("citias7")
+
+console.log("final: correctedTerm")
+console.log(correctedTerm)
+
+module.exports = { runSpellChecker }
