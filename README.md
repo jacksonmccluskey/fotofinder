@@ -68,21 +68,19 @@ To Visit App:
         
 #### Retriving the Unix Dictionary (with axios)
 
-`const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'`
+```const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'`
 
-`// retrieve UNIX words data`
+// retrieve UNIX words data
 
-`const getData = async () => {`
+const getData = async () => {
 
-    `try {`
-        `const {data} = await axios.get(url)`
-        `console.log("getData: try")`
-        `console.log(data)`
-        `return data`
-    `} catch (err) {`
-        `console.log(err.message);`
-    `}`
-`}`
+    try {
+        const {data} = await axios.get(url)
+        return data
+    } catch (err) {
+        console.log(err.message)
+    }
+}```
         
 #### Removing Non-Letter Characters
 
@@ -90,12 +88,12 @@ To Visit App:
 
 #### Replacing Mispelled Vowels
 
-`let lowerCaseWord = word.toLowerCase()`
+```let lowerCaseWord = word.toLowerCase()
 
-`let lowerCaseSearchTerm = searchTerm.toLowerCase()` 
+let lowerCaseSearchTerm = searchTerm.toLowerCase()
 
-`let hashtagWord = lowerCaseWord.replace(regexVowels, '#')` 
+let hashtagWord = lowerCaseWord.replace(regexVowels, '#')
 
-`let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')` 
+let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')
 
-`return hashtagWord === hashtagSearchTerm`
+return hashtagWord === hashtagSearchTerm```
