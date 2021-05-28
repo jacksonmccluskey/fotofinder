@@ -59,8 +59,11 @@ To Visit App:
 `import json`
 
 `with open('/usr/share/dict/words') as infile:`
+
     `words = infile.read().splitlines()`
+    
     `with open('words.json', 'w') as outfile:`
+    
         `json.dump(words, outfile)`
         
 #### Removing Non-Letter Characters
@@ -70,7 +73,11 @@ To Visit App:
 #### Replacing Mispelled Vowels
 
 `let lowerCaseWord = word.toLowerCase()`
+
 `let lowerCaseSearchTerm = searchTerm.toLowerCase()` 
+
 `let hashtagWord = lowerCaseWord.replace(regexVowels, '#')` 
+
 `let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')` 
+
 `return hashtagWord === hashtagSearchTerm`
