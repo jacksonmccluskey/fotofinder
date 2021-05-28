@@ -23,6 +23,10 @@ To Visit App:
 
 `localhost:3000` 
 
+## Demo
+
+![](Demo.png)
+
 ## Requirements and User Stories
 
 #### Requirements:
