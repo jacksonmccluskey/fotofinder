@@ -66,6 +66,24 @@ To Visit App:
     
         `json.dump(words, outfile)`
         
+#### Retriving the Unix Dictionary (with axios)
+
+`const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'`
+
+`// retrieve UNIX words data`
+
+`const getData = async () => {`
+
+    `try {`
+        `const {data} = await axios.get(url)`
+        `console.log("getData: try")`
+        `console.log(data)`
+        `return data`
+    `} catch (err) {`
+        `console.log(err.message);`
+    `}`
+`}`
+        
 #### Removing Non-Letter Characters
 
 `term.replace(/[^A-Za-z]g, '')`
