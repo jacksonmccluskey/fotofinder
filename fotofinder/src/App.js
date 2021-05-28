@@ -7,12 +7,6 @@ import Search from "./components/Search"
 import NotFound from "./components/NotFound"
 
 const App = () => {
-  const Words = require('./spelling/Words')
-
-  const checkSpelling = (searchInput) => {
-    return Words.fetchWords(searchInput)
-  }
-
   const handleSubmit = (e, history, searchInput) => {
     e.preventDefault()
     e.currentTarget.reset()

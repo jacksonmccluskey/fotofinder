@@ -21,7 +21,6 @@ function checkWords(wordData, searchTerm) {
 
     for (let i = 0; i < wordData.length; i++) {
         if (wordData[i] === searchTerm) {
-            console.log(wordData[i])
             finalWord = wordData[i]
             break
         }
@@ -31,13 +30,10 @@ function checkWords(wordData, searchTerm) {
 
     for (let i = 0; i < wordData.length; i++) {
         if (checkSpelling(wordData[i], searchTerm)) {
-            console.log(wordData[i])
             finalWord = wordData[i]
             break
         }
     }
-
-    console.log(typeof(finalWord))
 
     return finalWord
 }
@@ -49,11 +45,9 @@ function checkSpelling(word, searchTerm) {
     let hashtagWord = lowerCaseWord.replace(regexVowels, '#')
     let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')
 
-    let isSame = hashtagWord === hashtagSearchTerm
-
-    return isSame
+    return hashtagWord === hashtagSearchTerm
 }
 
-fetchWords("test")
+console.log(fetchWords("cit999"))
 
 module.exports = { fetchWords }
