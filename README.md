@@ -56,13 +56,12 @@ To Visit App:
 
 #### Retrieving the Unix Dictionary
 
-`import json
+`import json`
 
-
-with open('/usr/share/dict/words') as infile:
-    words = infile.read().splitlines()
-    with open('words.json', 'w') as outfile:
-        json.dump(words, outfile)`
+`with open('/usr/share/dict/words') as infile:`
+    `words = infile.read().splitlines()`
+    `with open('words.json', 'w') as outfile:`
+        `json.dump(words, outfile)`
         
 #### Removing Non-Letter Characters
 
@@ -70,4 +69,8 @@ with open('/usr/share/dict/words') as infile:
 
 #### Replacing Mispelled Vowels
 
-`let lowerCaseWord = word.toLowerCase(), lowerCaseSearchTerm = searchTerm.toLowerCase(), hashtagWord = lowerCaseWord.replace(regexVowels, '#'), hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#') return hashtagWord === hashtagSearchTerm`
+`let lowerCaseWord = word.toLowerCase()`
+`let lowerCaseSearchTerm = searchTerm.toLowerCase()` 
+`let hashtagWord = lowerCaseWord.replace(regexVowels, '#')` 
+`let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')` 
+`return hashtagWord === hashtagSearchTerm`
