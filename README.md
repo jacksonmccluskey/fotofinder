@@ -56,19 +56,22 @@ To Visit App:
 
 #### Retrieving the Unix Dictionary
 
-`import json`
+```
+import json
 
-`with open('/usr/share/dict/words') as infile:`
+with open('/usr/share/dict/words') as infile:
 
-    `words = infile.read().splitlines()`
+    words = infile.read().splitlines()
     
-    `with open('words.json', 'w') as outfile:`
+    with open('words.json', 'w') as outfile:
     
-        `json.dump(words, outfile)`
+        json.dump(words, outfile)
+```
         
 #### Retriving the Unix Dictionary (with axios)
 
-```const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'`
+```
+const url = 'https://gist.githubusercontent.com/anonymous/4d4ccc05ee8dfa637dc9e47548e90372/raw/2ced47226cbad8b1353a9afbb8593ade4d077267/wordlist.json'`
 
 // retrieve UNIX words data
 
@@ -80,15 +83,17 @@ const getData = async () => {
     } catch (err) {
         console.log(err.message)
     }
-}```
+}
+```
         
 #### Removing Non-Letter Characters
 
-`term.replace(/[^A-Za-z]g, '')`
+`const correctedSearchTerm = searchTerm.replace(regexAlpha, '')`
 
 #### Replacing Mispelled Vowels
 
-```let lowerCaseWord = word.toLowerCase()
+```
+let lowerCaseWord = word.toLowerCase()
 
 let lowerCaseSearchTerm = searchTerm.toLowerCase()
 
@@ -96,4 +101,5 @@ let hashtagWord = lowerCaseWord.replace(regexVowels, '#')
 
 let hashtagSearchTerm = lowerCaseSearchTerm.replace(regexVowels, '#')
 
-return hashtagWord === hashtagSearchTerm```
+return hashtagWord === hashtagSearchTerm
+```
