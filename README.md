@@ -52,9 +52,9 @@ To Visit App:
 - axios (For Fetching Data)
 - Unix words (For Spell Checking)
 
-![](SpellChecker.png)
-
 ## Spell Checker Logic
+
+![](SpellChecker.png)
 
 #### Retrieving the Unix Dictionary
 
