@@ -25,6 +25,8 @@ To Visit App:
 
 ## Requirements and User Stories
 
+![](Demo.png)
+
 #### Requirements:
 
 - [x] Create a simple responsive website to display images from a search term using an image search API of your choice
