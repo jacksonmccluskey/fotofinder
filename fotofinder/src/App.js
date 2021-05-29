@@ -5,7 +5,7 @@ import Header from "./components/Header"
 import Item from "./components/Item"
 import Search from "./components/Search"
 import NotFound from "./components/NotFound"
-import { runSpellChecker } from "./spelling/Words"
+import runSpellChecker from "./spelling/Words"
 
 const App = () => {
   const handleSubmit = async (e, history, searchInput) => {

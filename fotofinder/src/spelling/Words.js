@@ -135,4 +135,4 @@ const runSpellChecker = async (searchTerm) => {
     return await spellChecker(searchTerm)
 }
 
-module.exports = { runSpellChecker }
+export default runSpellChecker
