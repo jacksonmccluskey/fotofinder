@@ -43,6 +43,63 @@ To Visit App:
 - [x] Create a README that documents the assumptions and decisions that you have made in designing the architecture of your site
 - [x] Please host the site on Heroku or another platform of your choice [Link](fotofinderapp.web.app)
 
+## Components
+
+#### App.js
+- Root Component
+- Contains handleSubmit function
+- Returns PhotoContextProvider Component
+
+#### PhotoContext.js
+- Uses Context (A way to pass data through the component tree without having to pass props down manually at every level)
+- Contains Flickr API query for images
+- Returns children as PhotoContext.Provider Component
+
+#### Header.js
+- Header of App
+- Contains Title ("FotoFinder")
+- Returns Form Component
+
+#### Form.js
+- Search Bar for App
+- Contains Text Field, Search Button, & Submit Feature
+- Returns Form Element
+
+#### Search.js
+- Title for Images
+- Contains Image Title (searchTerm + "Images")
+- Returns Container Component
+
+#### Container.js
+- Image Results Area
+- Contains useEffect for searchTerm to runSearch(searchTerm)
+- Returns Loader or Gallery Component
+
+#### Gallery.js
+- Image Results
+- Contains Custom Image Components as Buttons or NoImages Component
+- Returns images or noImages and opens LightBox Modal Component on tap
+
+#### Loader.js
+- Loading Component
+- Contains Nothing
+- Return Empty div
+
+#### Item.js
+- Title for Picture
+- Contains Picture Title (searchTerm + "Pictures")
+- Returns Container Component
+
+#### NoImages.js
+- NoImages Component
+- Contains "No Images Found" Header
+- Returns HTML Only
+
+#### NotFound.js
+- NotFound Component
+- Contains "Page Not Found" Header
+- Returns HTML Only
+
 ## Tech Stack
 
 #### Tools & Resources Used:
