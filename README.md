@@ -1,4 +1,4 @@
-# FotoFinder [Final Project](fotofinderapp.web.app)
+# FotoFinder [Final Project](https://fotofinderapp.web.app)
 A simple, responsive website built with React to display images from a search term using the Flickr API.
 
 ![](FotoFinder.png)
@@ -45,7 +45,7 @@ To Visit App:
   - [x] Mistyped vowels. 'ceku' should auto-correct to ‘cake'
 - [x] Make sure to take into account some error handling, and keep your code clean and organized
 - [x] Create a README that documents the assumptions and decisions that you have made in designing the architecture of your site
-- [x] Please host the site on Heroku or another platform of your choice [Link](fotofinderapp.web.app)
+- [x] Please host the site on Heroku or another platform of your choice [Firebase](https://fotofinderapp.web.app)
 
 ## Components
 
