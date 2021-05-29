@@ -100,6 +100,8 @@ To Visit App:
 - Contains "Page Not Found" Header
 - Returns HTML Only
 
+![](NotFound.png)
+
 ## Tech Stack
 
 #### Tools & Resources Used:
