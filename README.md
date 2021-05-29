@@ -11,6 +11,10 @@ Clone down this repository. You will need `node` and `npm` installed globally on
 
 `git clone https://github.com/jacksonmccluskey/FotoFinder.git`
 
+Go to folder:
+
+`cd FotoFinder/fotofinder`
+
 Installation:
 
 `npm install`  
