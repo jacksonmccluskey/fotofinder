@@ -52,6 +52,8 @@ To Visit App:
 - axios (For Fetching Data)
 - Unix words (For Spell Checking)
 
+![](SpellChecker.png)
+
 ## Spell Checker Logic
 
 #### Retrieving the Unix Dictionary
