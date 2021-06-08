@@ -39,7 +39,7 @@ const checkWords = (wordData, searchTerm) => {
 
     for (let i = 0; i < wordData.length; i++) { // second loop: check if word matches searchTerm (non-vowels)
         if (matchConsonants(wordData[i], searchTerm)) { // searchTerm is equal to word in dictionary (non-vowels)
-            const distance = levenshteinDistance(wordData[i], searchTerm)
+            const distance = levenshteinDistance(wordData[i].toLowerCase(), searchTerm.toLowerCase())
             possibleWords.push(wordData[i])
             possibleDistances.push(distance)
             finalWord = wordData[i]
